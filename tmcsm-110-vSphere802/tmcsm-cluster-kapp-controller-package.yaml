@@ -1,0 +1,31 @@
+apiVersion: run.tanzu.vmware.com/v1alpha3
+kind: KappControllerConfig
+metadata:
+  name: tmcsm-cluster-kapp-controller-package
+  namespace: tmcsm
+spec:
+  kappController:
+    config:
+      caCerts: |-
+        -----BEGIN CERTIFICATE-----
+        MIIDKTCCAhGgAwIBAgIRAOgLkaG6dUFYXIJ3nQ/FkAowDQYJKoZIhvcNAQELBQAw
+        FDESMBAGA1UEAxMJSGFyYm9yIENBMB4XDTI0MDIyNjIwNDU0NVoXDTM0MDIyMzIw
+        NDU0NVowFDESMBAGA1UEAxMJSGFyYm9yIENBMIIBIjANBgkqhkiG9w0BAQEFAAOC
+        AQ8AMIIBCgKCAQEArmSnfsOxgjaR0xtA+x03GB3RFzhYVE6B09QzAhkcjjbugQO5
+        K8bGxj06YNesqbh2hseMwwM0nOeSmLG68zkVkUS/EVcpJi+nifCVXUXzUCHQj2RG
+        i+ca+7Fwo7I8tv7Tvu0Ox2eQfhH645XbS6TSf1NCqHtZigG5k5Yr3tpQX+bYWdzo
+        7WFS/zrxTrgXzmh4YS2q8iHEzAV3PCg/CAXP18lS2MnxF2KTVwaSqZKpkwjuBfzX
+        JcqiymLVsetvXkjajUUobvKUSEndN2JI6ew3LVTY5wSZM9XOO3YHCl4AIvt65qyJ
+        vfvVb1McskKPdiKCgt0LmI2RKLGO8hGEZPIVWQIDAQABo3YwdDAOBgNVHQ8BAf8E
+        BAMCAgQwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMA8GA1UdEwEB/wQF
+        MAMBAf8wHQYDVR0OBBYEFNYEseetiXgteSZzBwUDGFrb7fjsMBMGA1UdEQQMMAqC
+        CGhhcmJvcmNhMA0GCSqGSIb3DQEBCwUAA4IBAQCGajcWL1QvSKbtsygeA8ahIR2x
+        LhECBPFjLdDpCfDSGeVHxwG22PRIb8+aFxH8RXMPIuEj8H9gU7e2amMzzRLdVNel
+        P/dmqPDp3CBoYjcTASFpcPZcRuDfEcOaGZVuSaQZyEtPXjRmrlqDXWB77tx4A4P3
+        xmpIdUjKes8PfsNbcFURAnbgYouOuibPgJcpyMIWGDXNFbp0g001c9IvYkkvI1VW
+        mOZioB5u2dlNyfD1XmhkWQtmOeepA7Kij+XlqlL/fg+eOKO+2EFiNsjKW4C6fntV
+        j3jNnbib5+jJPiPZBWi6TdAmkWTA84MUUcP9Aqml2LyWWxeGrMz1jus7Ew6H
+        -----END CERTIFICATE-----
+    createNamespace: false
+    globalNamespace: tkg-system
+  namespace: tkg-system

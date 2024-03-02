@@ -1,0 +1,2 @@
+https://pinniped-supervisor.tmc.h2o-4-23142.h2o.vmware.com/provider/pinniped/.well-known/openid-configuration
+https://pinniped-supervisor.tmc.h2o-4-23130.h2o.vmware.com/provider/pinniped/callback

@@ -1,0 +1,68 @@
+prometheusVolumeSize: "1"
+harborProject: "harbor.h2o-4-23130.h2o.vmware.com/tmc-sm"
+clusterIssuer: "local-issuer"
+authenticationType: federated
+oidc:
+  issuerType: pinniped
+  issuerURL: https://trial-8106836.okta.com/oauth2/default
+  clientID: 0oaby8stzySD4GYHI697
+  clientSecret: fug-lGLePLGPqhndHnHIF9cIjxEhZNwPIS_KtVP81F2DUiYHBw4sYXqNLF2wuMh9
+contourEnvoy:
+  serviceType: LoadBalancer
+  serviceAnnotations: # needed only when specifying load balancer controller specific config like preferred IP
+    ako.vmware.com/load-balancer-ip: 10.214.162.73
+  # when using an auto-assigned IP instead of a preferred IP, please use the following key instead of the serviceAnnotations above
+  # loadBalancerClass: local
+dnsZone: "tmc.h2o-4-23142.h2o.vmware.com"
+minio:
+  username: root
+  password: "VMware1!"
+postgres:
+  userPassword: "VMware1!"
+  maxConnections: 300
+trustedCAs:
+  myCA.pem: |
+    -----BEGIN CERTIFICATE-----
+    MIIEGTCCAwGgAwIBAgIUfQ05NpJKPiiR4atK3c4uJCuqHqgwDQYJKoZIhvcNAQEL
+    BQAwgZsxCzAJBgNVBAYTAklUMQ4wDAYDVQQIDAVJdGFseTENMAsGA1UEBwwEcm9t
+    ZTEhMB8GA1UECgwYSW50ZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMSMwIQYDVQQDDBpo
+    Mm8tNC0yMzEzMC5oMm8udm13YXJlLmNvbTElMCMGCSqGSIb3DQEJARYWY3B1bGNp
+    bmkyMDAzQGdtYWlsLmNvbTAeFw0yNDAyMjcxODIwMzRaFw0yOTAyMjUxODIwMzRa
+    MIGbMQswCQYDVQQGEwJJVDEOMAwGA1UECAwFSXRhbHkxDTALBgNVBAcMBHJvbWUx
+    ITAfBgNVBAoMGEludGVybmV0IFdpZGdpdHMgUHR5IEx0ZDEjMCEGA1UEAwwaaDJv
+    LTQtMjMxMzAuaDJvLnZtd2FyZS5jb20xJTAjBgkqhkiG9w0BCQEWFmNwdWxjaW5p
+    MjAwM0BnbWFpbC5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCK
+    2F+Iqx7u3XduwnZbiG17BWKfiaSkzOElAMN/4sf933+jZXzlQD3/3uAZ961KMDz1
+    FKhctlGyRAQIrYwOrUb4YwnjZEL5QnoVyVf6PWvFGZRqk2nULCeuwRxnVFrRaAhk
+    jOUiIEfL8DnoVDr0NostL9RJ6WvQdjn5knxfNRKDN0mrfYLRND6Wlz2VaOVFmfF8
+    k83iNfsNfOuasegqSLWPMLZOCQeAvlpacJe3VW1pLlyByVSzRs8r9NISXF6GABGY
+    vy3Ir2tiMfEtjrs1kzbg31dZRuT+NU2hieNpBOjarLWaHxO803MLsVx/ukPylpYl
+    kSdzuUALtBsFUFHuOsIDAgMBAAGjUzBRMB0GA1UdDgQWBBTMPnIibKv6XIyTHB2C
+    Mc3eSFTq0jAfBgNVHSMEGDAWgBTMPnIibKv6XIyTHB2CMc3eSFTq0jAPBgNVHRMB
+    Af8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBgInsy4Uffua4uxBnKXUm6XHlx
+    Mp65Hh5lheya9DxkatDThaE5mNFnmVF8jQWUvpHbBhqMyTN2+9zMt9ojuokYOMzy
+    qo40f2Qnd1sPUVPXWnrooDirknrHYgG2SWDV5unnveU5zxuCmpY7eUUOqLRZ1ksR
+    KiTP4YbweyqrrD2vJ6khTkwWx1MKHFeMhPstZGdFokzWu1eUVWeFSfeeUnv5vN3D
+    F8W7ulNx4A7wzNtUXg7/4GaqTcwIKEbMXUMpUxS5xqRbOYRX0KEXXtkm2ka0+GPG
+    AVyM24SWvdw5ZG9nfo9vXwB4glF3fSa7KJlQh2NsWHHKOH7BNPtzrAxtSJRv
+    -----END CERTIFICATE-----
+  harbor.pem: |
+    -----BEGIN CERTIFICATE-----
+    MIIDKTCCAhGgAwIBAgIRAOgLkaG6dUFYXIJ3nQ/FkAowDQYJKoZIhvcNAQELBQAw
+    FDESMBAGA1UEAxMJSGFyYm9yIENBMB4XDTI0MDIyNjIwNDU0NVoXDTM0MDIyMzIw
+    NDU0NVowFDESMBAGA1UEAxMJSGFyYm9yIENBMIIBIjANBgkqhkiG9w0BAQEFAAOC
+    AQ8AMIIBCgKCAQEArmSnfsOxgjaR0xtA+x03GB3RFzhYVE6B09QzAhkcjjbugQO5
+    K8bGxj06YNesqbh2hseMwwM0nOeSmLG68zkVkUS/EVcpJi+nifCVXUXzUCHQj2RG
+    i+ca+7Fwo7I8tv7Tvu0Ox2eQfhH645XbS6TSf1NCqHtZigG5k5Yr3tpQX+bYWdzo
+    7WFS/zrxTrgXzmh4YS2q8iHEzAV3PCg/CAXP18lS2MnxF2KTVwaSqZKpkwjuBfzX
+    JcqiymLVsetvXkjajUUobvKUSEndN2JI6ew3LVTY5wSZM9XOO3YHCl4AIvt65qyJ
+    vfvVb1McskKPdiKCgt0LmI2RKLGO8hGEZPIVWQIDAQABo3YwdDAOBgNVHQ8BAf8E
+    BAMCAgQwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMA8GA1UdEwEB/wQF
+    MAMBAf8wHQYDVR0OBBYEFNYEseetiXgteSZzBwUDGFrb7fjsMBMGA1UdEQQMMAqC
+    CGhhcmJvcmNhMA0GCSqGSIb3DQEBCwUAA4IBAQCGajcWL1QvSKbtsygeA8ahIR2x
+    LhECBPFjLdDpCfDSGeVHxwG22PRIb8+aFxH8RXMPIuEj8H9gU7e2amMzzRLdVNel
+    P/dmqPDp3CBoYjcTASFpcPZcRuDfEcOaGZVuSaQZyEtPXjRmrlqDXWB77tx4A4P3
+    xmpIdUjKes8PfsNbcFURAnbgYouOuibPgJcpyMIWGDXNFbp0g001c9IvYkkvI1VW
+    mOZioB5u2dlNyfD1XmhkWQtmOeepA7Kij+XlqlL/fg+eOKO+2EFiNsjKW4C6fntV
+    j3jNnbib5+jJPiPZBWi6TdAmkWTA84MUUcP9Aqml2LyWWxeGrMz1jus7Ew6H
+    -----END CERTIFICATE-----
